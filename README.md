@@ -1,0 +1,1 @@
+# 2-segon-trim-programacio
