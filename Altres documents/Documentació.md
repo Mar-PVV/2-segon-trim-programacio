@@ -1,0 +1,2 @@
+# Documentació de les pràctiques
+
