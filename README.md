@@ -1,4 +1,4 @@
-# 2-segon-trim-programacio
+# Segon trimestre programació
 
 Ara que ja dominem el llenguatge de programació, aquest segon trimestre ens centrarem en mètodes numèrics de càlculs senzills. L'objectiu de qualsevol mètode numèric és, d'una banda, formular un algorisme eficient per resoldre de forma aproximada el problema que es té entre mans i, per l'altra, proporcionar una acotació de l'error comés per aquest algorisme. En el nostre cas, ens centrarem en la formulació d'algorismes.
 
