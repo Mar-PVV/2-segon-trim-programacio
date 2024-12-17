@@ -28,7 +28,7 @@ Modifiqueu el programa perquè es calculi el mcm i el MCD de una llista amb una 
 
 ## Estructura del projecte
 
-- **Fitxer `main.py`:** 
+- **Fitxer `main.py`:**
   - Importa les funcions del fitxer `funcions.py`.
   - Defineix una llista amb els nombres per calcular el mcm i el MCD.
   - Crida les funcions implementades i mostra els resultats.
