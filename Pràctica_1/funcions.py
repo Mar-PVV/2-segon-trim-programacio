@@ -10,3 +10,8 @@ def prime(x, y):
             else:
                 prime_list.append(i)
     return prime_list
+
+def factoritzacio_primers(num):
+    llista_primers = prime(1,num) # Us retorna per exemple: [2,3,5,7,11]
+    
+    # Calcular llista de factors primers
