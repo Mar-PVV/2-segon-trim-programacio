@@ -30,14 +30,6 @@ entrada = Escenari(
         "4": "Anar a la porta"
     },
     """
-    +---------+
-    |         |
-    |   [ ]   | <- Calaix
-    |         |
-    |   (_)   | <- Espelma
-    |         |
-    |   ===   | <- Porta
-    +---------+
     """
 )
 
@@ -46,7 +38,7 @@ passadis = Escenari(
     "Has obert la porta i ara ets en un passadís llarg. Hi ha un cofre tancat amb clau i una porta al final.",
     {
         "1": "Consultar inventari",
-        "2": "Obrir el cofre",
+        "2": "Anar a la porta de l'esquerra",
         "3": "Anar a la porta del final",
         "4": "Tornar a l'entrada"
     },
@@ -65,8 +57,8 @@ habitacio_secreta = Escenari(
     "Has trobat una habitació secreta! Al centre, hi ha una caixa forta tancada amb cadenat. Potser necessitaràs alguna cosa per obrir-la.",
     {
         "1": "Consultar inventari",
-        "2": "Obrir la caixa forta",
-        "3": "Examinar la caixa forta",
+        "2": "Examinar la caixa forta",
+        "3": "Examinar habitació secreta",
         "4": "Sortir de l'habitació secreta"
     },
     """
@@ -75,7 +67,7 @@ habitacio_secreta = Escenari(
     |    [ Caixa Forta ]    |
     |                       |
     |                       |
-    |    [ Cadenat ]        |
+    |                       |
     +-----------------------+
     """
 )
@@ -87,36 +79,23 @@ biblioteca = Escenari(
         "1": "Consultar inventari",
         "2": "Examinar els llibres",
         "3": "Obrir el llibre estrany",
-        "4": "Sortir de la biblioteca"
+        "4": "Examinar estanteria de llibres",
+        "5": "Tornar al passadis"
     },
     """
-    +-----------------------+
-    |                       |
-    |    [ Llibres ]        |
-    |                       |
-    |      [ Llibre ]       |
-    |                       |
-    +-----------------------+
     """
 )
 
 cuina = Escenari(
     "Cuina",
-    "Arribes a la cuina, on pots veure una antiga llar de foc. Hi ha una caixa amb foc a dins.",
+    "",
     {
         "1": "Consultar inventari",
-        "2": "Encendre el foc",
+        "2": "Encendre/apagar el foc",
         "3": "Examinar llar de foc",
         "4": "Sortir de la cuina"
     },
     """
-    +-----------------------+
-    |                       |
-    |    [ Foc ]            |
-    |                       |
-    |    [ Llar de Foc ]    |
-    |                       |
-    +-----------------------+
     """
 )
 
@@ -125,17 +104,10 @@ soterrani = Escenari(
     "Estàs al soterrani. La porta secreta s'ha obert, i ara veus un camí més fosc que porta a una altra sortida.",
     {
         "1": "Consultar inventari",
-        "2": "Examinar la sortida secreta",
-        "3": "Anar a la cuina",
+        "2": "Examinar a la dreta del soterrani",
+        "3": "Examinar a l'esquerra del soterrani",
         "4": "Sortir del soterrani"
     },
     """
-    +-----------------------+
-    |                       |
-    |    [ Sortida ]        |
-    |                       |
-    |    [ Cadenat ]        |
-    |                       |
-    +-----------------------+
     """
 )

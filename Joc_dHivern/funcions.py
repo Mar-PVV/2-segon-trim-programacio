@@ -1,4 +1,4 @@
-from escenaris import entrada, passadis, biblioteca, soterrani, habitacio_secreta
+from escenaris import entrada, passadis, biblioteca, soterrani, habitacio_secreta, cuina
 
 def mostrar_inventari(inventari):
     if len(inventari) == 0:
@@ -39,13 +39,11 @@ def accions_passadis(accio, inventari):
     if accio == "1":
         mostrar_inventari(inventari)
     elif accio == "2":
-        if "clau gran" in inventari:
-            print("\nObres el cofre i trobes un encenedor!")
-            inventari.append("encenedor")
-        else:
-            print("\nEl cofre està tancat amb clau. Necessites una clau gran.")
+        escenari_actual = cuina
+        print("\nEntres a la cuina.")
     elif accio == "3":
-        print("\nLa porta del final està tancada amb un cadenat. Necessites la clau adequada.")
+        escenari_actual = biblioteca
+        print("\nLa porta del final porta a la biblioteca.")
     elif accio == "4":
         print("\nTornes a l'entrada.")
         escenari_actual = entrada
@@ -71,7 +69,10 @@ def accions_biblioteca(accio, inventari):
             print("\nObres una porta secreta amagada dins de la biblioteca.")
             escenari_actual = soterrani
         else:
-            print("\nLa porta secreta està tancada. Potser necessites alguna cosa per obrir-la.")
+            print("\Trobes una porta secreta. Està tancada. Potser necessites alguna cosa per obrir-la.")
+    elif accio == "5":
+        print("\nTornes al passadis.")
+        escenari_actual = passadis
     else:
         print("\nOpció no vàlida.")
     
@@ -79,20 +80,30 @@ def accions_biblioteca(accio, inventari):
 
 def accions_cuina(accio, inventari):
     escenari_actual = cuina
-    if accio == "1":
-        mostrar_inventari(inventari)
-    elif accio == "2":
-        if "foc" in inventari:
-            print("\nEncens la llar de foc. La cuina ara està càlida.")
-        else:
-            print("\nNecessites un encenedor o alguna cosa per encendre el foc.")
-    elif accio == "3":
-        print("\nExamineu la llar de foc, i us adoneu que és antiga però funcional.")
-    elif accio == "4":
-        print("\nSortiu de la cuina.")
-        escenari_actual = soterrani
+    if not "ploms on" in inventari:
+        print("Ups! No veus res de res... Has de tornar enrrere.")
+        escenari_actual = passadis
     else:
-        print("\nOpció no vàlida.")
+        if accio == "1":
+            mostrar_inventari(inventari)
+        elif accio == "2":
+            if "foc" not in inventari:
+                print("\nEncens la llar de foc. La cuina ara està càlida.")
+                inventari.append("foc")
+            else:
+                print("\nApagues el foc. Brrrr quin fred!")
+                inventari.remove("foc")
+        elif accio == "3":
+            if "foc" in inventari:
+                print("Quanta escalfor! Aparta aparta!")
+            else:
+                print("\nExamineu la llar de foc, i trobes una clau gran.")
+                inventari.append("clau gran")
+        elif accio == "4":
+            print("\nSortiu de la cuina.")
+            escenari_actual = passadis
+        else:
+            print("\nOpció no vàlida.")
     
     return escenari_actual, inventari
 
@@ -101,13 +112,14 @@ def accions_soterrani(accio, inventari):
     if accio == "1":
         mostrar_inventari(inventari)
     elif accio == "2":
-        print("\nExplores el soterrani, però no trobes res interessant.")
+        print("\nExplores el soterrani, i trobes que uns ploms estan abaixats, els apuges.")
+        inventari.append("ploms on")
     elif accio == "3":
-        if "cadenat" in inventari:
-            print("\nObres una porta secreta al soterrani amb el cadenat.")
-            escenari_actual = cuina
+        if "clau gran" in inventari:
+            print("\nExlores i trobes una porta secreta! L'obres amb la clau gran vas a parar a una habitació secreta.")
+            escenari_actual = habitacio_secreta
         else:
-            print("\nLa porta al soterrani està tancada amb cadenat. Necessites una clau.")
+            print("\nExlores i trobes una porta secreta! Eps! Està tancada! Necessites una clau gran.")
     elif accio == "4":
         print("\nDecideixes sortir del soterrani i tornar al passadís.")
         escenari_actual = passadis
@@ -116,24 +128,30 @@ def accions_soterrani(accio, inventari):
     
     return escenari_actual, inventari
 
-def accions_habitacio_secreta(accio, inventari):
+def accions_habitacio_secreta(accio, inventari, intents):
     escenari_actual = habitacio_secreta
     if accio == "1":
         mostrar_inventari(inventari)
     elif accio == "2":
-        print("\nExplores la caixa forta, però sembla que necessites una clau per obrir-la.")
-    elif accio == "3":
-        if "llibre clau" in inventari:
-            print("\nObres la caixa forta amb la clau que vas trobar al llibre.")
-            inventari.append("regal")
-            print("\nHas trobat un regal! Felicitats!")
-            escenari_actual = None  # El joc es termina aquí
+        print("\nExplores la caixa forta, però sembla que necessites un codi per obrir-la.")
+        if intents > 0:
+            codi = input("Codi: ")
+            if codi == "4421":
+                print("\nExplores la caixa forta, i trobes un REGAL! Bones festes a tots! -Mar")
+                exit()
+            else:
+                intents -= 1
+                print(f"Codi erroni... Et queden {intents} intents.")
         else:
-            print("\nLa caixa forta segueix tancada. Potser necessites la clau correcta.")
+            print("Caixa forta bloquejada.")
+            exit()
+
+    elif accio == "3":
+        print("\nExplores l'habitació i trobes uns nombres apuntats a un paper, 4421.")
     elif accio == "4":
         print("\nDecideixes sortir de l'habitació secreta.")
-        escenari_actual = passadis
+        escenari_actual = soterrani
     else:
         print("\nOpció no vàlida.")
     
-    return escenari_actual, inventari
+    return escenari_actual, inventari, intents
