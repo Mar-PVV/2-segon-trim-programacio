@@ -15,7 +15,7 @@ En aquesta pràctica programarem una aplicació en Python per representar gràfi
 
 ### Funcionalitat bàsica
 
-1. Escriviu una funció que, donats dos nombres enters, `a` i `b`, calculi el MCD i retorni el nombre d’iteracions necessàries.
+1. Escriviu una funció que, donats dos nombres enters, `a` i `b`, calculi el MCD i retorni el nombre d’iteracions necessàries. (Funció `iteracions_MCD_Euclides(a,b)`)
 2. Executeu la funció per totes les parelles de nombres enters `(i, j)` per valors de `i` i `j` entre `0` i `10`. Emmagatzemeu:
    - Els valors de `i` en una llista `x`
    - Els valors de `j` en una llista `y`
@@ -31,9 +31,9 @@ En aquesta pràctica programarem una aplicació en Python per representar gràfi
 ### Fitxer `main.py`
 
 - Importa les funcions des del fitxer `funcions.py`.
-- Crida les funcions `calcul_MCD(a,b)` i `plt.scatter(x, y, c=z)`
+- Crida les funcions `iteracions_MCD_Euclides(a,b)` i `plt.scatter(x, y, c=z)`
 - Defineix la lògica per calcular el MCD per totes les parelles de nombres en un rang donat.
 
 ### Fitxer `funcions.py`
 
-- Conté la funció `calcul_MCD(a,b)` que calcula el MCD utilitzant l'algorisme d'Euclides.
+- Conté la funció `iteracions_MCD_Euclides(a,b)` que calcula el MCD utilitzant l'algorisme d'Euclides i retorni el nombre d'iteracions.
