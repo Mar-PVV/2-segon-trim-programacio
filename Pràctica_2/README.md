@@ -33,7 +33,30 @@ En aquesta pràctica programarem una aplicació en Python per representar gràfi
 - Importa les funcions des del fitxer `funcions.py`.
 - Crida les funcions `iteracions_MCD_Euclides(a,b)` i `plt.scatter(x, y, c=z)`
 - Defineix la lògica per calcular el MCD per totes les parelles de nombres en un rang donat.
+- Genera la gàfica.
 
 ### Fitxer `funcions.py`
 
 - Conté la funció `iteracions_MCD_Euclides(a,b)` que calcula el MCD utilitzant l'algorisme d'Euclides i retorni el nombre d'iteracions.
+
+## Per poder utilitzar `plt.scatter(x, y, c=z)`
+
+### A la línia de comandes
+
+Primer:
+
+```shell
+python -m pip install -U pip
+```
+
+Segon:
+
+```shell
+python -m pip install -U matplotlib
+```
+
+### Al fitxer `main.py`
+
+```python
+import matplotlib.pyplot as plt
+```
