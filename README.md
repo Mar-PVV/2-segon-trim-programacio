@@ -14,6 +14,8 @@ En aquest segon trimestre cal tenir en compte que s'utilitzarà el mateix mètod
 
  També s'ha de tenir en compte com ha de ser la documentació de cada pràctica. Consulta la documentació [aquí](./Altres%20documents/Documentació.md).
 
-## Pràctica 1 - MCD i mcm
+## Pràctiques
 
-Ves al material de la [pràctica 1](./Pràctica_1/README.md).
+[Pràctica 1](./Pràctica_1/README.md) - MCD i mcm
+[Pràctica 2](./Pràctica_2/README.md) - Temps de Càlcul del Màxim Comú Divisor
+[Pràctica 3](./Pràctica_3/README.md) -  Comptar i Ordenar
