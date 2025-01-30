@@ -48,7 +48,7 @@ Aquest mètode pot ser més eficient en alguns casos, ja que redueix l’interva
 - Programeu l’algorisme en Python. El programa haurà de demanar a l’usuari que proporcioni
 els valors a i b inicials pels quals la funció té signes contraris. La funció estarà definidia en el `main.py`
 - Feu que el programa doni el nombre d’iteracions que ha necessitat per trobar la solució.
-- Criteri d'aturada del programa: Quan $|f(x_m)| < tol$, el punt $x_m$ és la solució aproximada de l’equació amb un error màxim de $tol$ on $tol=10^-10$
+- Criteri d'aturada del programa: Quan $|f(x_m)| < tol$, el punt $x_m$ és la solució aproximada de l’equació amb un error màxim de $tol$ on $tol=10^{-10}$
 
 ### Millora opcional
 
@@ -60,9 +60,9 @@ els valors a i b inicials pels quals la funció té signes contraris. La funció
 
 El fitxer principal contindrà:
 
-- Definició de la funció \(f(x)\) i mostrar-la a l'usuari.
-- Definició de la tolerància \(tol=10^-10\).
-- La lògica per obtenir l’entrada de l’usuari: \(a\), \(b\).
+- Definició de la funció $f(x)$ i mostrar-la a l'usuari.
+- Definició de la tolerància $tol=10^{-10}$.
+- La lògica per obtenir l’entrada de l’usuari: $a$, $b$.
 - Comprovació que \(a\) i \(b\) compleixen les condicions del Teorema de Bolzano.
 - Crides a les funcions implementades al fitxer `funcions.py` les quals implementen el mètode de bisecció (i mètode de la falsa posició si és el cas)
 - Mostra dels resultats, incloent la solució \(x_b\), el valor de la funció \(f(x_b)\) en aquest punt i el nombre d’iteracions.
