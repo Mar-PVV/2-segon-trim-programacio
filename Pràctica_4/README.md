@@ -1,6 +1,6 @@
 # Pràctica 4: Resolució d'Equacions amb el Mètode de la Bisecció
 
-En aquesta pràctica, desenvolupareu un programa en Python que utilitza el **mètode de la bisecció** per resoldre equacions de la forma \(f(x) = 0\), on \(f(x)\) és una funció contínua. També es proposa implementar una millora opcional amb el **mètode de la falsa posició**.
+En aquesta pràctica, desenvolupareu un programa en Python que utilitza el **mètode de la bisecció** per resoldre equacions de la forma $f(x) = 0$, on $f(x)$ és una funció contínua. També es proposa implementar una millora opcional amb el **mètode de la falsa posició**.
 
 ## Objectius
 
