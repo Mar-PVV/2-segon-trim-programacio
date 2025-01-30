@@ -11,32 +11,31 @@ En aquesta pràctica, desenvolupareu un programa en Python que utilitza el **mè
 
 ## Teoria Prèvia
 
-Per trobar solucions d’equacions de la forma \(f(x) = 0\), existeixen diversos mètodes numèrics. Un dels més naturals és el **mètode de la bisecció**. Aquest es basa en el **Teorema de Bolzano**, que afirma:
+Per trobar solucions d’equacions de la forma $f(x) = 0$, existeixen diversos mètodes numèrics. Un dels més naturals és el **mètode de la bisecció**. Aquest es basa en el **Teorema de Bolzano**, que afirma:
 
-- Si \(f(x)\) és una funció contínua i \(f(a) \cdot f(b) < 0\), aleshores existeix (almenys) una solució \(c \in (a, b)\) tal que \(f(c) = 0\).
+- Si $f(x)$ és una funció contínua i $f(a) \cdot f(b) < 0$, aleshores existeix (almenys) una solució $c \in (a, b)$ tal que $f(c) = 0$.
 
 ### Algorisme del Mètode de la Bisecció
 
 1. **Avaluació del punt mig**: 
-   - Es calcula el punt mig de l’interval \((a, b)\):  
-     \[
-     x_m = \frac{a + b}{2}
-     \]
-   - Es calcula \(f(x_m)\).
+   - Es calcula el punt mig de l’interval $(a, b)$:  
+     $x_m = \frac{a + b}{2}$
+     
+   - Es calcula $f(x_m)$.
 
 2. **Reducció de l’interval**:
-   - Si \(f(x_m)\) té el mateix signe que \(f(a)\), aleshores canviarem  \(a\) per \(x_m\) i el nou interval serà \((x_m, b)\).
-   - Si no, canviarem \(b\) per \(x_m\) i el nou interval serà \((a, x_m)\).
-   - Repetim el procés fins que la longitud de l’interval sigui menor que una tolerància \(tol\) o \(|f(x_m)| < tol\).
+   - Si $f(x_m)$ té el mateix signe que $f(a)$, aleshores canviarem  $a$ per $x_m$ i el nou interval serà $(x_m, b)$.
+   - Si no, canviarem $b$ per $x_m$ i el nou interval serà $(a, x_m)$.
+   - Repetim el procés fins que la longitud de l’interval sigui menor que una tolerància $tol$ o $|f(x_m)| < tol$.
 
 3. **Criteri d’aturada**:
-   - Quan \(|f(x_m)| < tol\), el punt \(x_m\) és la solució aproximada de l’equació amb un error màxim de \(tol\).
+   - Quan $|f(x_m)| < tol$, el punt $x_m$ és la solució aproximada de l’equació amb un error màxim de $tol$.
 
 <img src="./images/bisection.png" alt="Mètode de la Bisecció" height="500">
 
 ### Mètode de la Falsa Posició
 
-Una alternativa al mètode de la bisecció és el **mètode de la falsa posició** (o **regula falsi**). En lloc d’utilitzar el punt mig \((a + b)/2\), es calcula el punt de tall de la recta entre els punts \((a, f(a))\) i \((b, f(b))\) amb l’eix \(x\):
+Una alternativa al mètode de la bisecció és el **mètode de la falsa posició** (o **regula falsi**). En lloc d’utilitzar el punt mig $(a + b)/2$, es calcula el punt de tall de la recta entre els punts $(a, f(a))$ i $(b, f(b))$ amb l’eix $x$:
 
 Aquest mètode pot ser més eficient en alguns casos, ja que redueix l’interval utilitzant una aproximació lineal de la funció.
 
@@ -49,7 +48,7 @@ Aquest mètode pot ser més eficient en alguns casos, ja que redueix l’interva
 - Programeu l’algorisme en Python. El programa haurà de demanar a l’usuari que proporcioni
 els valors a i b inicials pels quals la funció té signes contraris. La funció estarà definidia en el `main.py`
 - Feu que el programa doni el nombre d’iteracions que ha necessitat per trobar la solució.
-- Criteri d'aturada del programa: Quan \(|f(x_m)| < tol\), el punt \(x_m\) és la solució aproximada de l’equació amb un error màxim de \(tol\) on \(tol=10^-10\)
+- Criteri d'aturada del programa: Quan $|f(x_m)| < tol$, el punt $x_m$ és la solució aproximada de l’equació amb un error màxim de $tol$ on $tol=10^-10$
 
 ### Millora opcional
 
