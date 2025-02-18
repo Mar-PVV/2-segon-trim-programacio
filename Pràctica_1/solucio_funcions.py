@@ -31,9 +31,36 @@ def calcul_mcm(num1, num2):
 
     mcm = 1
 
-    for factor in llista1:
-        if factor not in llista2:
-            mcm = mcm * factor
+    for divisor in llista1:
+        if divisor not in llista2:
+            mcm = mcm * divisor
+
+    for divisor in llista2:
+        if divisor not in llista1:
+            mcm = mcm * divisor
         else:
-            pass # continuar vosaltres
-    # El mcm seran tots els factors comuns i no comuns i en cas de comuns els de major exponent.
+            exp1 = llista1.count(divisor)
+            exp2 = llista2.count(divisor)
+            exp = max(exp1,exp2)
+            mcm = mcm * divisor**exp
+            
+    return mcm
+
+
+def calcul_MCD(num1, num2):
+  
+    llista1 = factoritzacio_primers(num1)
+    llista2 = factoritzacio_primers(num2)
+
+    
+    llista_mcd = []
+    for factor in llista1:
+        if factor in llista2:
+            llista_mcd.append(factor)
+            llista2.remove(factor)  
+
+
+    mcd = 1
+    for factor in llista_mcd:
+        mcd *= factor
+    return mcd
