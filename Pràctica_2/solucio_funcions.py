@@ -1,8 +1,8 @@
-def iteracions_MCD_Euclides(a,b):
+def iteracions_MCD_Euclides(x,y):
     iteracions = 0
 
-    a = max(a, b)
-    b = min(a,b)
+    a = max(x,y)
+    b = min(x,y)
 
     while b != 0:
         r = a % b
