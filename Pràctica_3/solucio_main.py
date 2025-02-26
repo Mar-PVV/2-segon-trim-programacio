@@ -1,8 +1,8 @@
 from solucio_funcions import genera_llista, compta_repeticions, ordena_manual
 
 
-rang = 3 # Els nombres poden anar de l'1 al 3.
-longitud = 5 # La llista estarà composta per 5 elements.
+rang = 10 # Els nombres poden anar de l'1 al 3.
+longitud = 15 # La llista estarà composta per 5 elements.
 
 llista = genera_llista(rang, longitud)
 
