@@ -11,6 +11,8 @@ print(registre)
 
 monedes_restants = num_monedes
 guanyador = None
+aleatori_monedes_quedaven = None
+aleatori_monedes_tretes = None
 
 print(f'[ {monedes_restants} monedes ]')
 
@@ -27,6 +29,7 @@ while monedes_restants > 0:
     if monedes_restants == 0:
         guanyador = 'usuari'
         print(f'Ha guanyat l\'{guanyador}')
+        registre[aleatori_monedes_quedaven-1][aleatori_monedes_tretes-1] = 1
         break
 
     treure_1 = registre[monedes_restants-1][0]
@@ -40,6 +43,10 @@ while monedes_restants > 0:
         print('L\'ordinador treu 1 moneda.')
     else:
         monedes_ordinador = random.randint(1,2)
+
+        aleatori_monedes_quedaven = monedes_restants
+        aleatori_monedes_tretes = monedes_ordinador
+
         monedes_restants -= monedes_ordinador
         print(f'L\'ordinador treu {monedes_ordinador} monedes (aleatori).')
 
@@ -49,3 +56,4 @@ while monedes_restants > 0:
         guanyador = 'ordinador'
         print(f'Ha guanyat l\'{guanyador}')
         break
+print(registre)
