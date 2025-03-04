@@ -2,7 +2,7 @@ import csv
 
 def llegir_registre(nom_file):
     registre = []
-    with open('./Pràctica_5/registres/{nom_file}.csv','r') as f:
+    with open(f'./Pràctica_5/registres/{nom_file}.csv','r') as f:
         reader = csv.reader(f)
         for index, row in enumerate(reader):
             if index > 1:
