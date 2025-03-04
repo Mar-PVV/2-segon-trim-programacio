@@ -1,6 +1,6 @@
 import random
 
-num_monedes = 7
+num_monedes = 13
 registre = []
 
 # Crear taula de 0 de registre.
