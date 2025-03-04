@@ -1,14 +1,9 @@
 import random
+from funcions import llegir_registre
 
-num_monedes = 13
-registre = []
+nom_file = input('A quin joc vols jugar? Nom del registre: ')
 
-# Crear taula de 0 de registre.
-for i in range(num_monedes):
-    registre.append([0,0])
-
-print(registre)
-
+registre = llegir_registre(nom_file)
 monedes_restants = num_monedes
 guanyador = None
 aleatori_monedes_quedaven = None

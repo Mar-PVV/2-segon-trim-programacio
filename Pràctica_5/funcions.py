@@ -28,3 +28,7 @@ def crear_registre(nom_file, num_monedes):
         registre.append([0,0])
     
     escriure_registre(nom_file, registre)
+
+def get_num_monedes(nom_file):
+    registre = llegir_registre(nom_file)
+    return len(registre)
