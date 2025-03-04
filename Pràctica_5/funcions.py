@@ -1,15 +1,13 @@
-import pandas as pd
+import csv
 
 def llegir_registre():
-    file = pd.read_csv('registre.csv')
-    
-    registre = []
-    next(file)
 
-    for i in file:
-        registre.append([i[1],i[2]])
+    with open('./Pràctica_5/registre.csv','r') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            print(row)
 
-    print(registre)
+llegir_registre()
 
 def escriure_registre():
     pass
