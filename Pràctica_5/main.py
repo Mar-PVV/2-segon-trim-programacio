@@ -1,10 +1,10 @@
 import random
-from funcions import llegir_registre
+from funcions import llegir_registre, get_num_monedes
 
 nom_file = input('A quin joc vols jugar? Nom del registre: ')
 
 registre = llegir_registre(nom_file)
-monedes_restants = num_monedes
+monedes_restants = get_num_monedes(nom_file)
 guanyador = None
 aleatori_monedes_quedaven = None
 aleatori_monedes_tretes = None
