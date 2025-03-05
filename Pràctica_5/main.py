@@ -1,5 +1,5 @@
 import random
-from funcions import llegir_registre, get_num_monedes,escriure_registre
+from funcions import llegir_registre, get_num_monedes,escriure_registre, tira_ordinador
 
 nom_file = input('A quin joc vols jugar? Nom del registre: ')
 
@@ -28,23 +28,7 @@ while monedes_restants > 0:
             registre[aleatori_monedes_quedaven-1][aleatori_monedes_tretes-1] = 1
         break
 
-    treure_1 = registre[monedes_restants-1][0]
-    treure_2 = registre[monedes_restants-1][1]
-
-    if (treure_1 == 1 and treure_2 == 0) and monedes_restants > 1:
-        monedes_restants -= 2
-        print('L\'ordinador treu 2 monedes.')
-    elif (treure_1 == 0 and treure_2 == 1) or monedes_restants == 1:
-        monedes_restants -= 1
-        print('L\'ordinador treu 1 moneda.')
-    else:
-        monedes_ordinador = random.randint(1,2)
-
-        aleatori_monedes_quedaven = monedes_restants
-        aleatori_monedes_tretes = monedes_ordinador
-
-        monedes_restants -= monedes_ordinador
-        print(f'L\'ordinador treu {monedes_ordinador} monedes (aleatori).')
+    monedes_restants, aleatori_monedes_quedaven, aleatori_monedes_tretes = tira_ordinador(aleatori_monedes_quedaven, aleatori_monedes_tretes, monedes_restants, registre)
 
     print(f'[ {monedes_restants} monedes ]')
     
