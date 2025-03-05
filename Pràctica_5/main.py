@@ -1,15 +1,10 @@
 import random
+from funcions import llegir_registre, get_num_monedes,escriure_registre
 
-num_monedes = 13
-registre = []
+nom_file = input('A quin joc vols jugar? Nom del registre: ')
 
-# Crear taula de 0 de registre.
-for i in range(num_monedes):
-    registre.append([0,0])
-
-print(registre)
-
-monedes_restants = num_monedes
+registre = llegir_registre(nom_file)
+monedes_restants = get_num_monedes(nom_file)
 guanyador = None
 aleatori_monedes_quedaven = None
 aleatori_monedes_tretes = None
@@ -29,7 +24,8 @@ while monedes_restants > 0:
     if monedes_restants == 0:
         guanyador = 'usuari'
         print(f'Ha guanyat l\'{guanyador}')
-        registre[aleatori_monedes_quedaven-1][aleatori_monedes_tretes-1] = 1
+        if aleatori_monedes_quedaven:
+            registre[aleatori_monedes_quedaven-1][aleatori_monedes_tretes-1] = 1
         break
 
     treure_1 = registre[monedes_restants-1][0]
@@ -56,4 +52,6 @@ while monedes_restants > 0:
         guanyador = 'ordinador'
         print(f'Ha guanyat l\'{guanyador}')
         break
+
+escriure_registre(nom_file,registre)
 print(registre)
