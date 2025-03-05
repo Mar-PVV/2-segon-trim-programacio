@@ -1,4 +1,4 @@
-import csv
+import csv, random
 
 def llegir_registre(nom_file):
     registre = []
@@ -30,3 +30,46 @@ def crear_registre(nom_file, num_monedes):
 def get_num_monedes(nom_file):
     registre = llegir_registre(nom_file)
     return len(registre)
+
+def tira_ordinador(aleatori_monedes_quedaven, aleatori_monedes_tretes, monedes_restants, registre):
+    
+    treure_1 = registre[monedes_restants-1][0]
+    treure_2 = registre[monedes_restants-1][1]
+
+    if (treure_1 == 1 and treure_2 == 0) and monedes_restants > 1:
+        monedes_restants -= 2
+        print('L\'ordinador treu 2 monedes.')
+    elif (treure_1 == 0 and treure_2 == 1) or monedes_restants == 1:
+        monedes_restants -= 1
+        print('L\'ordinador treu 1 moneda.')
+    else:
+        monedes_ordinador = random.randint(1,2)
+
+        aleatori_monedes_quedaven = monedes_restants
+        aleatori_monedes_tretes = monedes_ordinador
+
+        monedes_restants -= monedes_ordinador
+        print(f'L\'ordinador treu {monedes_ordinador} monedes (aleatori).')
+
+    return monedes_restants, aleatori_monedes_quedaven, aleatori_monedes_tretes
+
+def tira_ordinador_aleatori(aleatori_monedes_quedaven, aleatori_monedes_tretes, monedes_restants, registre):
+    treure_1 = registre[monedes_restants-1][0]
+    treure_2 = registre[monedes_restants-1][1]
+
+    if (treure_1 == 1 and treure_2 == 0) and monedes_restants > 1:
+        monedes_restants -= 2
+        print('L\'ordinador aleatori treu 2 monedes.')
+    elif (treure_1 == 0 and treure_2 == 1) or monedes_restants == 1:
+        monedes_restants -= 1
+        print('L\'ordinador aletori treu 1 moneda.')
+    else:
+        monedes_ordinador = random.randint(1,2)
+
+        aleatori_monedes_quedaven = monedes_restants
+        aleatori_monedes_tretes = monedes_ordinador
+
+        monedes_restants -= monedes_ordinador
+        print(f'L\'ordinador aleatori treu {monedes_ordinador} monedes (aleatori).')
+
+    return monedes_restants, aleatori_monedes_quedaven, aleatori_monedes_tretes
