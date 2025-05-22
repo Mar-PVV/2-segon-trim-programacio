@@ -23,3 +23,5 @@ En aquest segon trimestre cal tenir en compte que s'utilitzarà el mateix mètod
 [Pràctica 3](./Pràctica_3/README.md) -  Comptar i Ordenar
 
 [Pràctica 4](./Pràctica_4/README.md) -  Mètode de bisecció
+
+[Pràctica 5](./Pràctica_5/README.md) -  Pedra, paper i tisores
